@@ -1,0 +1,14 @@
+services:
+
+  nota_api:
+    env_file:
+      - '.env'
+    container_name: 'nota-api'
+    command: ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/opt/nota
+
