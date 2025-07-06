@@ -1,0 +1,1 @@
+EXTENSOES_IMG = {'png', 'jpg', 'jpeg', 'gif', 'pdf'}
