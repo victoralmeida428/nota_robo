@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /opt/nota
 
 # Copia o arquivo de dependências para o diretório de trabalho
-COPY ./requirements.txt /app/requirements.txt
+COPY ./requirements.txt /opt/nota/requirements.txt
 
 # Instala as dependências do Python definidas no requirements.txt
 # --no-cache-dir: Não armazena o cache do pip para manter a imagem menor
@@ -25,7 +25,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 # Copia o código-fonte da sua aplicação para o diretório de trabalho
-COPY ./src /app/src
+COPY ./src /opt/nota/src
 
 # Expõe a porta 8000 para permitir a comunicação com a API fora do contêiner
 EXPOSE 8000
