@@ -22,7 +22,7 @@ COPY ./requirements.txt /opt/nota/requirements.txt
 # Instala as dependências do Python definidas no requirements.txt
 # --no-cache-dir: Não armazena o cache do pip para manter a imagem menor
 # --upgrade: Garante que o pip está atualizado
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /opt/nota/requirements.txt
 
 # Copia o código-fonte da sua aplicação para o diretório de trabalho
 COPY ./src /opt/nota/src
