@@ -9,21 +9,12 @@ import tempfile
 from tools.cv_tool import Tesseract
 from Service.deepseek_server import DeepSeekServer
 
-from Service.AuthService import AuthService
-
 
 class NotaControl:
 
 
-    @staticmethod
-    def auth(password):
-        auth = AuthService()
-        auth.authenticate(password)
-
-
     @classmethod
-    async def post(cls, file: UploadFile, password: str) -> dict:
-        cls.auth(password)
+    async def post(cls, file: UploadFile) -> dict:
         file_name = secure_filename(file.filename)
         cls.validacao_img(file_name)
         info_file = await cls.salvar_arquivo(file, file_name)

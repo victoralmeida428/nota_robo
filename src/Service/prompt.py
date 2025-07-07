@@ -12,6 +12,7 @@ INSTRUÇÕES ADICIONAIS:
     - Se o texto indicar "CARTÃO DE CRÉDITO", use o valor "credito".
     - Se o texto indicar "PIX", use o valor "pix".
 3. Informação Faltante: Se uma informação não puder ser encontrada no texto, o campo JSON correspondente deve ter um valor `null`.
+4. Se o meio_pagamento for pix, colocar o nome de quem enviou no campo estabelecimento
 
 ---
 Texto da NFS-e para processar:
